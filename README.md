@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Anish kumar</h1>
+<h1 align="center">HI 👋 MY SELF ANISH GUPTA </h1>
 <h3 align="center">Aspiring Develper</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=anishgupta6801&label=Profile%20views&color=0e75b6&style=flat" alt="anishgupta6801" /> </p>
