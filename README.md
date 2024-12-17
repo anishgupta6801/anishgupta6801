@@ -26,4 +26,5 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=anishgupta6801&show_icons=true&locale=en" alt="anishgupta6801" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=anishgupta6801&" alt="anishgupta6801" /></p>
+<br>
 Author - Anish gupta
