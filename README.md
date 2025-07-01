@@ -1,7 +1,7 @@
 # ANISH-INTRODUCTION
 # HI THERE, I'M ANISH GUPTA! 
 
-**MERN FULL STACK DEVELOPER | AI & ML ENTHUSIAST**
+**MERN FULL STACK DEVELOPER | AI & ML ENTHUSIAST | GENERATIVE AI EXPERT**
 
 From deep dives into CPU pipelines to crafting dynamic React components, my path has merged hardware insight with full-stack and Python development to shape elegant, high-performance web experiences.
 
