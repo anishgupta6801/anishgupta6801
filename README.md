@@ -82,4 +82,37 @@ From deep dives into CPU pipelines to crafting dynamic React components, my path
 
 ---
 
+## 🛠️ PROJECTS & CODE EXAMPLES
+
+### Person Functional Constructor
+A JavaScript functional constructor implementation demonstrating object creation, method assignment, and error handling.
+
+**Features:**
+- ✅ Functional constructor pattern with `new` keyword support
+- ✅ Input validation with custom error handling
+- ✅ Instance-specific method assignment
+- ✅ Comprehensive test suite
+- ✅ Interactive demo page
+
+**Files:**
+- [`person.js`](person.js) - The main constructor implementation
+- [`test.js`](test.js) - Comprehensive test suite
+- [`index.html`](index.html) - Interactive demo page
+
+**Usage Example:**
+```javascript
+// Valid usage
+const person = new Person("John", 25);
+console.log(person.greet()); // "Hello, my name is John"
+
+// Error handling
+try {
+    new Person("Alice", -5); // Throws error
+} catch (error) {
+    console.log(error.message); // "Age must be a positive number"
+}
+```
+
+---
+
 **AUTHOR:** ANISH GUPTA

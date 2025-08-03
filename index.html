@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Constructor Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .demo-section {
+            background: #f4f4f4;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .success {
+            color: #27ae60;
+            background: #d5f5d5;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .error {
+            color: #e74c3c;
+            background: #fdd5d5;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .output {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Person Functional Constructor Demo</h1>
+    
+    <div class="demo-section">
+        <h2>Interactive Demo</h2>
+        <p>Try creating a Person with different name and age values:</p>
+        
+        <div>
+            <input type="text" id="name" placeholder="Enter name" value="John">
+            <input type="number" id="age" placeholder="Enter age" value="25">
+            <button onclick="createPerson()">Create Person</button>
+        </div>
+        
+        <div id="result" class="output"></div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>Predefined Examples</h2>
+        <p>Click the buttons below to see different scenarios:</p>
+        
+        <button onclick="validExample()">Valid Example</button>
+        <button onclick="negativeAgeExample()">Negative Age</button>
+        <button onclick="zeroAgeExample()">Zero Age</button>
+        <button onclick="stringAgeExample()">String Age</button>
+        
+        <div id="examples" class="output"></div>
+    </div>
+    
+    <div class="demo-section">
+        <h2>Run All Tests</h2>
+        <p>Click to run the comprehensive test suite:</p>
+        <button onclick="runAllTests()">Run Tests</button>
+        <div id="testResults" class="output"></div>
+    </div>
+
+    <!-- Include the Person constructor and test file -->
+    <script src="person.js"></script>
+    <script src="test.js"></script>
+    
+    <script>
+        function displayResult(element, message, isError = false) {
+            element.innerHTML = `<div class="${isError ? 'error' : 'success'}">${message}</div>`;
+        }
+        
+        function createPerson() {
+            const name = document.getElementById('name').value;
+            const age = parseFloat(document.getElementById('age').value);
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                const person = new Person(name, age);
+                const greeting = person.greet();
+                displayResult(resultDiv, 
+                    `✅ Person created successfully!<br>
+                     Name: ${person.name}<br>
+                     Age: ${person.age}<br>
+                     Greeting: "${greeting}"`);
+            } catch (error) {
+                displayResult(resultDiv, `❌ Error: ${error.message}`, true);
+            }
+        }
+        
+        function validExample() {
+            const examplesDiv = document.getElementById('examples');
+            try {
+                const person = new Person("Alice", 30);
+                displayResult(examplesDiv, 
+                    `✅ Valid Example:<br>
+                     new Person("Alice", 30)<br>
+                     Greeting: "${person.greet()}"`);
+            } catch (error) {
+                displayResult(examplesDiv, `❌ Unexpected error: ${error.message}`, true);
+            }
+        }
+        
+        function negativeAgeExample() {
+            const examplesDiv = document.getElementById('examples');
+            try {
+                new Person("Bob", -5);
+                displayResult(examplesDiv, `❌ Should have thrown an error!`, true);
+            } catch (error) {
+                displayResult(examplesDiv, 
+                    `✅ Correctly threw error for negative age:<br>
+                     new Person("Bob", -5)<br>
+                     Error: ${error.message}`);
+            }
+        }
+        
+        function zeroAgeExample() {
+            const examplesDiv = document.getElementById('examples');
+            try {
+                new Person("Charlie", 0);
+                displayResult(examplesDiv, `❌ Should have thrown an error!`, true);
+            } catch (error) {
+                displayResult(examplesDiv, 
+                    `✅ Correctly threw error for zero age:<br>
+                     new Person("Charlie", 0)<br>
+                     Error: ${error.message}`);
+            }
+        }
+        
+        function stringAgeExample() {
+            const examplesDiv = document.getElementById('examples');
+            try {
+                new Person("Dave", "abc");
+                displayResult(examplesDiv, `❌ Should have thrown an error!`, true);
+            } catch (error) {
+                displayResult(examplesDiv, 
+                    `✅ Correctly threw error for string age:<br>
+                     new Person("Dave", "abc")<br>
+                     Error: ${error.message}`);
+            }
+        }
+        
+        function runAllTests() {
+            const testResultsDiv = document.getElementById('testResults');
+            
+            // Capture console output
+            const originalLog = console.log;
+            let testOutput = '';
+            console.log = function(...args) {
+                testOutput += args.join(' ') + '<br>';
+            };
+            
+            try {
+                const success = runTests();
+                console.log = originalLog;
+                testResultsDiv.innerHTML = `<div class="${success ? 'success' : 'error'}">${testOutput}</div>`;
+            } catch (error) {
+                console.log = originalLog;
+                displayResult(testResultsDiv, `❌ Test error: ${error.message}`, true);
+            }
+        }
+    </script>
+</body>
+</html>
