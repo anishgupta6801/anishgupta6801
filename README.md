@@ -12,7 +12,7 @@ From deep dives into CPU pipelines to crafting dynamic React components, my path
 - 🖥️ **PROFESSION:** MERN FULL STACK DEVELOPER & AI-ML EXPLORAR  
 - 💡 **TOP SKILLS :**  
   - MERN stack (MongoDB, Express, React, Node.js)  
-  - C, C++, Python  
+  - Python  
   - Machine Learning, Artificial Intelligence  
   - JavaScript  
   - Computer Networking
