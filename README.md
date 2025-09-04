@@ -52,8 +52,6 @@ From deep dives into CPU pipelines to crafting dynamic React components, my path
 ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![C](https://img.shields.io/badge/C-00599C?logo=c&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?logo=c%2B%2B&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-FF6F00?logo=python&logoColor=white)
 ![AI](https://img.shields.io/badge/AI-6D4C41?logo=python&logoColor=white)
